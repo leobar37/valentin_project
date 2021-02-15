@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import "./stepia.scss";
-import Particle, { IParticlesParams } from "react-particles-js";
 
 import SwiperCore, { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,7 +8,6 @@ import { params } from "../globals/constants";
 import { gsap } from "gsap";
 import Youtube from "react-youtube";
 SwiperCore.use([Pagination, SwiperSlide]);
-
 // styles
 const ValentinDedication = () => {
   // animatins
@@ -28,7 +26,10 @@ const ValentinDedication = () => {
   }, [elementOne.current]);
   return (
     <>
-      <Swiper className="slider">
+      <Swiper
+        className="slider"
+        pagination={{ clickable: true, el: ".pagination" }}
+      >
         <SwiperSlide className="one">
           <div className="box" ref={elementOne}>
             <i className="fas fa-heart"></i>
@@ -49,8 +50,6 @@ const ValentinDedication = () => {
             }}
             className="player"
             opts={{
-              width: "80%",
-              height: "600",
               playerVars: {
                 autoplay: 1,
                 list: "PLNB0Z_OkIVJ2zmPJ5Xys2BfvZ8TRV6wQf",
@@ -67,6 +66,7 @@ const ValentinDedication = () => {
             }}
           ></Particles>
         </SwiperSlide>
+        <div className="pagination"></div>
       </Swiper>
     </>
   );

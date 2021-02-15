@@ -56,6 +56,7 @@ $font-central: "Russo One", sans-serif;
       align-items: center;
       .box {
         @extend %box;
+        width: 70%;
       }
       .particles {
         position: absolute;
@@ -76,9 +77,12 @@ $font-central: "Russo One", sans-serif;
         z-index: 3;
         top: 20%;
         left: 10%;
+        width: 80%;
+        height: 50%;
         @media screen and (max-width: 425px) {
-          left: 0;
+          left: 10%;
           top: 25%;
+          width: 80%;
         }
       }
 
@@ -91,5 +95,32 @@ $font-central: "Russo One", sans-serif;
         top: 0;
       }
     }
+  }
+}
+
+// PAGINATION
+.pagination {
+  position: absolute;
+  top: 35%;
+  right: 2%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  .swiper-pagination-bullet {
+    $size-bullet: 35px;
+    background-color: white;
+    width: $size-bullet;
+    height: $size-bullet;
+    border-radius: 50%;
+    margin: 10px 10px;
+    cursor: pointer;
+    &.swiper-pagination-bullet-active {
+      background-color: rgba($color: black, $alpha: 0.5);
+    }
+  }
+  @media screen and (max-width: 425px) {
+    top: 80%;
+    flex-direction: row;
+    left: 33%;
   }
 }
