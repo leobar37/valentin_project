@@ -48,12 +48,11 @@ const ValentinDedication = () => {
             onReady={() => {
               console.log("read");
             }}
+            videoId={"ME-K2UOWZ5Y"}
             className="player"
             opts={{
               playerVars: {
                 autoplay: 1,
-                list: "PLNB0Z_OkIVJ2zmPJ5Xys2BfvZ8TRV6wQf",
-                listType: "playlist",
               },
             }}
           ></Youtube>
