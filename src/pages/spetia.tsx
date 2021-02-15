@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import "./stepia.scss";
+import Youtube from "react-youtube";
 
 import SwiperCore, { Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Particles from "react-particles-js";
 import { params } from "../globals/constants";
 import { gsap } from "gsap";
-import Youtube from "react-youtube";
+import VideoPlayer from "react-video-js-player";
+
 SwiperCore.use([Pagination, SwiperSlide]);
 // styles
 const ValentinDedication = () => {
@@ -44,18 +46,11 @@ const ValentinDedication = () => {
           <Particles className="particles" params={params}></Particles>
         </SwiperSlide>
         <SwiperSlide className="three">
-          <Youtube
-            onReady={() => {
-              console.log("read");
-            }}
-            videoId={"ME-K2UOWZ5Y"}
+          <VideoPlayer
+            autoplay={true}
             className="player"
-            opts={{
-              playerVars: {
-                autoplay: 1,
-              },
-            }}
-          ></Youtube>
+            src={"/video.webm"}
+          ></VideoPlayer>
 
           <Particles
             className="particles"
